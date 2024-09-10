@@ -21,5 +21,5 @@ void loop()
 {
   val = analogRead(POT);
   Serial.println(val);
-  delay(500);
+  delay(100);
 }

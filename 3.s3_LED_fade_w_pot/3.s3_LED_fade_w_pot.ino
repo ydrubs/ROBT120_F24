@@ -33,5 +33,5 @@ void loop() {
   Serial.print(analogValue);
   Serial.print(", Brightness: ");
   Serial.println(brightness);
-  delay(100);
+  delay(10);
 }

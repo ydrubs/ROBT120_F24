@@ -11,7 +11,8 @@ void setup() {
 
 void loop() {
   Serial.print("Switch:  ");
-  Serial.print(digitalRead(SW_pin));
+  button_status = digitalRead(SW_pin)
+  Serial.print(button_status);
   Serial.print(" | ");
   Serial.print("X-axis: ");
   Serial.print(analogRead(X_pin));
