@@ -15,9 +15,20 @@ void setup() {
 	myStepper.setAcceleration(50.0);
 	myStepper.setSpeed(200);
 	myStepper.moveTo(2038);
+
+  pinMode(2,OUTPUT);
 }
 
 void loop() {
+
+  int currentPos = myStepper.currentPosition();
+  int buttonPress = digitalRead(2);
+
+  if (buttonPress == 1) {
+    myStepper.moveTo(currentPos);
+    myStepper.run();
+  }
+
 	// Change direction once the motor reaches target position
 	if (myStepper.distanceToGo() == 0) 
 		myStepper.moveTo(-myStepper.currentPosition());
