@@ -11,7 +11,10 @@ void setup() {
 
 void loop() {
   int soundValue = analogRead(soundSensorPin); // Read the analog input value
-  
+
+  //The code essentially loops through and 'asks'; should 1 LED be on? Should 2 LED's be on? Should n LED's be on?
+  //It then 'answers' this question by turning on that many LED's and turning off the rest with the two nested loops.
+
   for (int i = 0; i < 10; i++) {
     int lowerBound = 70 + (i * 100);
     int upperBound = lowerBound + 100;
