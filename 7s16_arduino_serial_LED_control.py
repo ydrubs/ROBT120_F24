@@ -3,7 +3,7 @@ import time
 
 # Replace 'COM3' with the appropriate port for your system
 # On Linux or Mac, it might be something like '/dev/ttyUSB0'
-arduino = serial.Serial('COM3', 9600, timeout=1)
+arduino = serial.Serial('COM4', 9600, timeout=1)
 time.sleep(2)  # Give the connection a second to settle
 
 while True:

@@ -1,7 +1,7 @@
 #include <arduinoFFT.h>  // Correct library include
 
 #define SAMPLES 128            // Must be a power of 2
-#define SAMPLING_FREQUENCY 1000 // Hz, must be less than 10000 due to ADC limitations
+#define SAMPLING_FREQUENCY 4000 // Hz, must be less than 10000 due to ADC limitations
 
 #define RED_PIN  11
 #define GREEN_PIN  10
@@ -34,7 +34,9 @@ void loop() {
   }
 
   /* FFT */
-  FFT.windowing(vReal, SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD); // Windowing
+  FFT.windowing(vReal, SAMPLES, FFT_WIN_TYP_RECTANGLE, FFT_FORWARD); // Windowing
+  //FFT_WIN_TYP_HANN or FFT_WIN_TYP_BLACKMAN or FFT_WIN_TYP_RECTANGLE
+
   FFT.compute(vReal, vImag, SAMPLES, FFT_FORWARD);                 // Compute FFT
   FFT.complexToMagnitude(vReal, vImag, SAMPLES);                   // Compute magnitudes
 

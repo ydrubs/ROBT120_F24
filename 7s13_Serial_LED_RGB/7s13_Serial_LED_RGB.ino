@@ -58,9 +58,9 @@ void loop()
     int val3c = constrain(val3,0,100);
 
     //Map the values from percentages to analog values
-    int rval = map(val1c,0,100,255,0);  //first valid integer
-    int gval = map(val2c,0,100,255,0);  //second valid integer
-    int bval = map(val3c,0,100,255,0);  //third valid integer
+    int rval = map(val1c,0,100,0,255);  //first valid integer
+    int gval = map(val2c,0,100,0,255);  //second valid integer
+    int bval = map(val3c,0,100,0,255);  //third valid integer
 
     //set LED brightness
     analogWrite(RED, rval);
