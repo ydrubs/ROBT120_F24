@@ -15,10 +15,12 @@ byte smiley[] = { B11011,
                   B01110, 
                   B00000 };
 
+
+
 void setup() {
   lcd.begin(16, 2);
-  
   lcd.createChar(0, smiley);
+  lcd.clear()
   lcd.write(byte(0));
 }
 
